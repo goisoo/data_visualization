@@ -183,7 +183,7 @@
                 update();
             })
             */
-            d3.csv("C:\Data_Visualization\\archive\\winemag-data-130k-v2.csv")
+            d3.csv("https://github.com/goisoo/data_visualization.git/winemag-data-130k-v2.csv")
             .then(csvData => {
                 csvData.forEach(d => {
                     d["country"] = +d["country"];
