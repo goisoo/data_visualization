@@ -1,9 +1,10 @@
 class Histogram {
     margin = {
-        top: 10, right: 10, bottom: 40, left: 40
+        //top: 10, right: 10, bottom: 40, left: 40
+        top: 10, right: 10, bottom: 100, left: 40
     }
 
-    constructor(svg, width = 450, height = 250) {
+    constructor(svg, width = 450, height = 250) {    
         this.svg = svg;
         this.width = width;
         this.height = height;
@@ -49,8 +50,10 @@ class Histogram {
 
         this.xAxis
             .attr("transform", `translate(${this.margin.left}, ${this.margin.top + this.height})`)
+            //.style("writing-mode", "vertical-rl")    
             .style("writing-mode", "vertical-rl")
-            //.attr("transform", "rotate(-90, 50, 100)") // 텍스트 회전
+            //.tickPadding("1")           
+            //.attr("transform", "rotate(-90, 5, 10)") // 텍스트 회전
             .call(d3.axisBottom(this.xScale));
 
         this.yAxis
