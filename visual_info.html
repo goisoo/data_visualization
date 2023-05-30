@@ -144,9 +144,7 @@
         <table class="table table-striped text-center">
             <thead>
                 <tr>                    
-                    <th>Country</th>
-                    <th>Points</th>
-                    <th>Price</th>                    
+                    <th>Wine Information</th>                                        
                 </tr>
             </thead>
             <tbody id="data-table">
@@ -175,6 +173,7 @@
         
         function updateDataTable() {
             dataTable.update(brushedData && brushedData.length > 0 ? brushedData : data, data.columns)
+            //console.log(data);
             console.log(data.columns);
         }
         function update()
@@ -218,7 +217,7 @@
                 
                 scatterplot.on("brush", (brushedItems) => {
                     brushedData = brushedItems;
-                    updateHistogram();
+                    updateHistogram();                    
                     updateDataTable();               
                 //    updateDataTable();
                 });
@@ -230,7 +229,7 @@
                 updateHistogram();
                 
                 dataTable = new DataTable("#data-table");
-                console.log(dataTable);
+                //console.log(dataTable);
 
                 //updateDataTable();
                 

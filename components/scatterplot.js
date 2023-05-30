@@ -3,7 +3,7 @@ class Scatterplot {
         top: 10, right: 100, bottom: 40, left: 40
     }
 
-    constructor(svg, tooltip, data, width = 450, height = 900) {
+    constructor(svg, tooltip, data, width = 450, height = 800) {
         this.svg = svg;
         this.tooltip = tooltip;
         this.data = data;
@@ -91,12 +91,15 @@ class Scatterplot {
             .call(d3.axisLeft(this.yScale));
 
         if (useColor) {
+            
             this.legend
                 .style("display", "inline")
                 .style("font-size", ".8em")
                 .attr("transform", `translate(${this.width + this.margin.left + 10}, ${this.height/2})`)
                 .attr("transform", `translate(${this.width + this.margin.left + 10}, ${0})`)
                 .call(d3.legendColor().scale(this.zScale))
+                
+             
         }
         else {
             this.legend.style("display", "none");
